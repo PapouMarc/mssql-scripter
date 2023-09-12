@@ -27,7 +27,7 @@ Installation
 
 .. code:: bash
 
-    $ pip install mssql-scripter
+    $ pip3 install mssql-scripter
 
 Please refer to the `installation guide`_ for detailed install instructions. 
 

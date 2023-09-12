@@ -17,7 +17,7 @@ print('Running dev setup...')
 print('Root directory \'{}\'\n'.format(utility.ROOT_DIR))
 
 # install general requirements.
-utility.exec_command('pip install -r dev_requirements.txt', utility.ROOT_DIR)
+utility.exec_command('pip3 install -r dev_requirements.txt', utility.ROOT_DIR)
 run_time_id = utility.get_current_platform()
 
 if run_time_id:

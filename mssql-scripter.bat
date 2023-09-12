@@ -5,6 +5,6 @@ IF "%PYTHONIOENCODING%"=="" (
     SET PYTHONIOENCODING="UTF-8"
 )
 SET PYTHONPATH=%~dp0;%PYTHONPATH%
-python -m mssqlscripter %*
+python3 -m mssqlscripter %*
 
 endlocal

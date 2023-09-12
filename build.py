@@ -33,10 +33,10 @@ def build(platform_names):
     print_heading('Running setup')
 
     # install general requirements.
-    utility.exec_command('pip install -r dev_requirements.txt', utility.ROOT_DIR)
+    utility.exec_command('pip3 install -r dev_requirements.txt', utility.ROOT_DIR)
 
     # convert windows line endings to unix for mssql-cli bash script
-    utility.exec_command('python dos2unix.py mssql-scripter mssql-scripter', utility.ROOT_DIR)
+    utility.exec_command('python3 dos2unix.py mssql-scripter mssql-scripter', utility.ROOT_DIR)
 
     for platform in platform_names:
         utility.clean_up(utility.MSSQLSCRIPTER_BUILD_DIRECTORY)
@@ -45,9 +45,9 @@ def build(platform_names):
         mssqltoolsservice.copy_sqltoolsservice(platform)
 
         print_heading('Building mssql-scripter {} wheel package package'.format(platform))
-        utility.exec_command('python --version', utility.ROOT_DIR)
+        utility.exec_command('python3 --version', utility.ROOT_DIR)
         utility.exec_command(
-            'python setup.py check -r -s bdist_wheel --plat-name {}'.format(platform),
+            'python3 setup.py check -r -s bdist_wheel --plat-name {}'.format(platform),
             utility.ROOT_DIR,
             continue_on_error=False)
         
@@ -109,7 +109,7 @@ def validate_package(platform_names):
 
     # To ensure we have a clean install, we disable the cache as to prevent cache overshadowing actual changes made.
     utility.exec_command(
-       'pip install --no-cache-dir --no-index ./dist/{}'.format(mssqlscripter_wheel_name),
+       'pip3 install --no-cache-dir --no-index ./dist/{}'.format(mssqlscripter_wheel_name),
        root_dir, continue_on_error=False)
     
 

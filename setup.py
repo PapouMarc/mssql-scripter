@@ -12,7 +12,7 @@ import sys
 
 from setuptools import setup
 
-MSSQLSCRIPTER_VERSION = '1.0.0a23'
+MSSQLSCRIPTER_VERSION = '2.0.0a1'
 
 CLASSIFIERS = [
     'Development Status :: 3 - Alpha',
